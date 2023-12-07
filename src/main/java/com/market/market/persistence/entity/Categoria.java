@@ -11,20 +11,20 @@ public class Categoria {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_categoria")
-    private int idCategoria;
+    private Integer idCategoria;
 
     private String descripcion;
 
-    private boolean estado;
+    private Boolean estado;
 
     @OneToMany(mappedBy = "categoria")
     private List<Producto> productos;
 
-    public int getIdCategoria() {
+    public Integer getIdCategoria() {
         return idCategoria;
     }
 
-    public void setIdCategoria(int idCategoria) {
+    public void setIdCategoria(Integer idCategoria) {
         this.idCategoria = idCategoria;
     }
 
@@ -36,11 +36,11 @@ public class Categoria {
         this.descripcion = descripcion;
     }
 
-    public boolean isEstado() {
+    public Boolean isEstado() {
         return estado;
     }
 
-    public void setEstado(boolean estado) {
+    public void setEstado(Boolean estado) {
         this.estado = estado;
     }
 }

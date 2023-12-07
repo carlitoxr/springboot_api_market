@@ -5,46 +5,37 @@ import jakarta.persistence.*;
 @Entity
 @Table(name = "productos")
 public class Producto {
-/*
-* id_producto int(11) AI PK
-nombre varchar(45)
-id_categoria int(11)
-codigo_barras varchar(150)
-precio_venta decimal(16,2)
-cantidad_stock int(11)
-estado
-* */
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY) //por auto_increment
     @Column(name = "id_producto")
-    private int idProducto;
+    private Integer idProducto;
 
     private String nombre; // Como se llama igual que la tabla no hay que poner la anotación
 
     @Column(name = "id_categoria")
-    private int idCategoria;
+    private Integer idCategoria;
 
     @Column(name = "codigo_barras")
     private String codigoBarras;
 
     @Column(name = "precio_venta")
-    private double precioVenta;
+    private Double precioVenta;
 
     @Column(name = "cantidad_stock")
-    private int cantidadStock;
+    private Integer cantidadStock;
 
-    private boolean estado;
+    private Boolean estado;
 
     @ManyToOne
     @JoinColumn(name = "id_categoria", insertable = false, updatable = false)
     // Mediante este atributo no se puede insertar (insertable = false) registros ni modificar (updatable = false)
     private Categoria categoria; // Representa la relación que hay entre Producto y Categoria
 
-    public int getIdProducto() {
+    public Integer getIdProducto() {
         return idProducto;
     }
 
-    public void setIdProducto(int idProducto) {
+    public void setIdProducto(Integer idProducto) {
         this.idProducto = idProducto;
     }
 
@@ -56,11 +47,11 @@ estado
         this.nombre = nombre;
     }
 
-    public int getIdCategoria() {
+    public Integer getIdCategoria() {
         return idCategoria;
     }
 
-    public void setIdCategoria(int idCategoria) {
+    public void setIdCategoria(Integer idCategoria) {
         this.idCategoria = idCategoria;
     }
 
@@ -72,27 +63,27 @@ estado
         this.codigoBarras = codigoBarras;
     }
 
-    public double getPrecioVenta() {
+    public Double getPrecioVenta() {
         return precioVenta;
     }
 
-    public void setPrecioVenta(double precioVenta) {
+    public void setPrecioVenta(Double precioVenta) {
         this.precioVenta = precioVenta;
     }
 
-    public int getCantidadStock() {
+    public Integer getCantidadStock() {
         return cantidadStock;
     }
 
-    public void setCantidadStock(int cantidadStock) {
+    public void setCantidadStock(Integer cantidadStock) {
         this.cantidadStock = cantidadStock;
     }
 
-    public boolean isEstado() {
+    public Boolean isEstado() {
         return estado;
     }
 
-    public void setEstado(boolean estado) {
+    public void setEstado(Boolean estado) {
         this.estado = estado;
     }
 }

@@ -12,7 +12,7 @@ public class Compra {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_compra")
-    private int idCompra;
+    private Integer idCompra;
 
     @Column(name = "id_cliente")
     private String idCliente;
@@ -20,11 +20,11 @@ public class Compra {
     private LocalDateTime fecha;
 
     @Column(name = "medio_pago")
-    private char medioPago;
+    private String medioPago;
 
     private String comentario;
 
-    private char estado;
+    private String estado;
 
     @ManyToOne
     @JoinColumn(name = "id_cliente", insertable = false, updatable = false)
@@ -33,11 +33,11 @@ public class Compra {
     @OneToMany(mappedBy = "compra")
     private List<ComprasProducto> productos;
 
-    public int getIdCompra() {
+    public Integer getIdCompra() {
         return idCompra;
     }
 
-    public void setIdCompra(int idCompra) {
+    public void setIdCompra(Integer idCompra) {
         this.idCompra = idCompra;
     }
 
@@ -57,11 +57,11 @@ public class Compra {
         this.fecha = fecha;
     }
 
-    public char getMedioPago() {
+    public String getMedioPago() {
         return medioPago;
     }
 
-    public void setMedioPago(char medioPago) {
+    public void setMedioPago(String medioPago) {
         this.medioPago = medioPago;
     }
 
@@ -73,11 +73,11 @@ public class Compra {
         this.comentario = comentario;
     }
 
-    public char getEstado() {
+    public String getEstado() {
         return estado;
     }
 
-    public void setEstado(char estado) {
+    public void setEstado(String estado) {
         this.estado = estado;
     }
 }

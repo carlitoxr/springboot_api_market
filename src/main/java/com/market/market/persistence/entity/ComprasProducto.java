@@ -9,11 +9,11 @@ public class ComprasProducto {
     @EmbeddedId
     private ComprasProductoPK id;
 
-    private int cantidad;
+    private Integer cantidad;
 
-    private double total;
+    private Double total;
 
-    private boolean estado;
+    private Boolean estado;
 
     @ManyToOne
     @JoinColumn(name = "id_compra", updatable = false, insertable = false)
@@ -31,27 +31,27 @@ public class ComprasProducto {
         this.id = id;
     }
 
-    public int getCantidad() {
+    public Integer getCantidad() {
         return cantidad;
     }
 
-    public void setCantidad(int cantidad) {
+    public void setCantidad(Integer cantidad) {
         this.cantidad = cantidad;
     }
 
-    public double getTotal() {
+    public Double getTotal() {
         return total;
     }
 
-    public void setTotal(double total) {
+    public void setTotal(Double total) {
         this.total = total;
     }
 
-    public boolean isEstado() {
+    public Boolean isEstado() {
         return estado;
     }
 
-    public void setEstado(boolean estado) {
+    public void setEstado(Boolean estado) {
         this.estado = estado;
     }
 }
