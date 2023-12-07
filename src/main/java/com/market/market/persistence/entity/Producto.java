@@ -35,6 +35,11 @@ estado
 
     private boolean estado;
 
+    @ManyToOne
+    @JoinColumn(name = "id_categoria", insertable = false, updatable = false)
+    // Mediante este atributo no se puede insertar (insertable = false) registros ni modificar (updatable = false)
+    private Categoria categoria; // Representa la relación que hay entre Producto y Categoria
+
     public int getIdProducto() {
         return idProducto;
     }
