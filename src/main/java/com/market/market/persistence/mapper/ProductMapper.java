@@ -55,6 +55,6 @@ public interface ProductMapper {
 
     @InheritInverseConfiguration
     @Mapping(target = "productos", ignore = true)
-    Producto toProduct(Product product);
+    Producto toProducto(Product product);
 
 }
